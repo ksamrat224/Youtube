@@ -15,7 +15,7 @@ const Head = () => {
           src="https://www.svgrepo.com/show/312300/hamburger-menu.svg"
           alt="Menu"
         />
-        <a href="">
+        <a href="link">
           <img
             className="h-8 mx-2 "
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/768px-YouTube_Logo_2017.svg.png"
