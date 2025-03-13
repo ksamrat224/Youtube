@@ -14,7 +14,7 @@ const VideoContainer = () => {
     setVideos(json.items);
   };
   return (
-    <div>
+    <div className="flex">
       {videos.map((video) => (
         <VideoCard key={video.id} info={video} />
       ))}
