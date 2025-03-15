@@ -7,7 +7,10 @@ const Head = () => {
   const [searchQuery, setSearchQuery] = useState("");
   useEffect(() => {
     console.log(searchQuery);
-    setTimeout(() => getSearchSuggestions(), 200);
+    const timer = setTimeout(() => getSearchSuggestions(), 200);
+    return () => {
+      clearTimeout(timer);
+    };
   }, [searchQuery]);
 
   const getSearchSuggestions = async () => {
