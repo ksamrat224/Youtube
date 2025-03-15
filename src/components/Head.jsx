@@ -1,7 +1,11 @@
 import { useDispatch } from "react-redux";
 import { toggleMenu } from "../utils/appSlice";
+import { useState } from "react";
 
 const Head = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+  console.log(searchQuery);
+
   const dispatch = useDispatch();
   const toggleMenuHandler = () => {
     dispatch(toggleMenu());
@@ -29,6 +33,8 @@ const Head = () => {
           className="w-2/3 border border-gray-700  p-2 rounded-l-full"
           type="text"
           placeholder="See What You Love"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
         />
         <button className="border border-gray-400 p-2 rounded-r-full bg-gray-200">
           Search🔍
