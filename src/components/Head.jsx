@@ -5,15 +5,16 @@ import { YOUTUBE_SEARCH_API } from "../utils/constants";
 
 const Head = () => {
   const [searchQuery, setSearchQuery] = useState("");
+
   useEffect(() => {
-    console.log(searchQuery);
-    const timer = setTimeout(() => getSearchSuggestions(), 200);
+    const timer = setTimeout(() => getSearchSuggestions(), 300);
     return () => {
       clearTimeout(timer);
     };
   }, [searchQuery]);
 
   const getSearchSuggestions = async () => {
+    console.log("API CALL-" + searchQuery);
     const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
     const json = await data.json();
     console.log(json);
@@ -42,16 +43,25 @@ const Head = () => {
       </div>
 
       <div className="col-span-10 px-10 ">
-        <input
-          className="w-2/3 border border-gray-700  p-2 rounded-l-full"
-          type="text"
-          placeholder="See What You Love"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-        />
-        <button className="border border-gray-400 p-2 rounded-r-full bg-gray-200">
-          Search🔍
-        </button>
+        <div>
+          <input
+            className="px-5  w-2/3 border border-gray-700  p-2 rounded-l-full"
+            type="text"
+            placeholder="See What You Love"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+          <button className="border border-gray-400 p-2 rounded-r-full bg-gray-200">
+            Search🔍
+          </button>
+        </div>
+        <div className="fixed bg-slate-400 py-2 px-5 w-[42.25rem] shadow-lg rounded-lg">
+          <ul>
+            <li className=" py-2 shadow">🔍Iphone</li>
+            <li className="py-2 shadow">🔍Iphone Pro</li>
+            <li className="py-2 shadow">🔍Iphone Pro Max</li>
+          </ul>
+        </div>
       </div>
       <div className="col-span-1">
         <img
