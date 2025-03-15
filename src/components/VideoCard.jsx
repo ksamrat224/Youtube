@@ -17,4 +17,5 @@ const VideoCard = ({ info }) => {
   );
 };
 
+//debouncing concepts
 export default VideoCard;
