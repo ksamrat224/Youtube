@@ -55,11 +55,14 @@ const Head = () => {
             Search🔍
           </button>
         </div>
-        <div className="fixed bg-slate-400 py-2 px-5 w-[42.25rem] shadow-lg rounded-lg">
+        <div className="fixed bg-white py-2 px-3 w-[42.25rem] shadow-lg rounded-lg border border-gray-100">
           <ul>
-            <li className=" py-2 shadow">🔍Iphone</li>
-            <li className="py-2 shadow">🔍Iphone Pro</li>
-            <li className="py-2 shadow">🔍Iphone Pro Max</li>
+            <li className="py-2 px-3 shadow hover:bg-gray-100">🔍Iphone</li>
+            <li className="py-2 px-3 shadow hover:bg-gray-100">🔍Iphone</li>
+            <li className="py-2 px-3 shadow hover:bg-gray-100">
+              🔍Iphone
+            </li>{" "}
+            <li className="py-2 px-3 shadow hover:bg-gray-100">🔍Iphone</li>
           </ul>
         </div>
       </div>
