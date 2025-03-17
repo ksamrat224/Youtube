@@ -9,7 +9,14 @@ const Head = () => {
   const [showSuggestions, setShowSuggestions] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => getSearchSuggestions(), 300);
+    const timer = setTimeout(() => {
+      if (cache) {
+        setSuggestions(json[1]);
+      } else {
+        getSearchSuggestions();
+      }
+    }, 300);
+
     return () => {
       clearTimeout(timer);
     };
