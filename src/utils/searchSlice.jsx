@@ -5,7 +5,7 @@ const searchSlice = createSlice({
   initialState: {},
   reducers: {
     cacheResults: (state, action) => {
-      state = { ...action.payload, ...state }; //spread operator
+      state = Object.assign(state, action.payload); //spread operator
     },
   },
 });
