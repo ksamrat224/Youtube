@@ -17,4 +17,8 @@ const Comment = ({ data }) => {
   );
 };
 
+export const CommentList = ({ comments }) => {
+  return comments.map((comment) => <Comment data={comment} />);
+};
+
 export default Comment;
