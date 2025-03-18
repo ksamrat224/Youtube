@@ -18,7 +18,10 @@ const Comment = ({ data }) => {
 };
 
 export const CommentList = ({ comments }) => {
-  return comments.map((comment) => <Comment data={comment} />);
+  //don't use indexes as keys!!disclaimer
+  return comments.map((comment, index) => (
+    <Comment key={index} data={comment} />
+  ));
 };
 
 export default Comment;
